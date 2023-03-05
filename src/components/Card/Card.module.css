@@ -1,0 +1,15 @@
+.main {
+	width: 300px;
+}
+
+.main.blue {
+	background-color: blue;
+}
+
+.main.red {
+	background-color: red;
+}
+
+.photo {
+	width: 300px;
+}
