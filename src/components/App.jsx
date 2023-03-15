@@ -1,10 +1,11 @@
 import { Component } from 'react'
+import { nanoid } from 'nanoid'
+
 import Header from './Header/Header'
 import ToDoList from './ToDoList/ToDoList'
 import Modal from './Modal/Modal'
 import FormLogin from './FormLogin/FormLogin'
-
-import { nanoid } from 'nanoid'
+// import Counter from './Counter/Counter'
 
 class App extends Component {
 	state = {
@@ -40,6 +41,7 @@ class App extends Component {
 						/>
 					</Modal>
 				)}
+				{/* <Counter /> */}
 			</div>
 		)
 	}
