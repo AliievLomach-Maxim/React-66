@@ -78,12 +78,12 @@ class ToDoList extends Component {
 			<>
 				<h1>My To-Do list</h1>
 				{this.state.isDelete && (
-					<div class='alert alert-danger' role='alert'>
+					<div className='alert alert-danger' role='alert'>
 						To-do delete successfully!
 					</div>
 				)}
 				{this.state.isCreate && (
-					<div class='alert alert-success' role='alert'>
+					<div className='alert alert-success' role='alert'>
 						Create to-do successfully!
 					</div>
 				)}
