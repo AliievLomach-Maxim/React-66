@@ -1,34 +1,35 @@
 import { Component, useState } from 'react'
-import { nanoid } from 'nanoid'
+// import { nanoid } from 'nanoid'
 import { Toaster } from 'react-hot-toast'
 
 import Header from './Header/Header'
-import ToDoList from './ToDoList/ToDoList'
-import Modal from './Modal/Modal'
-import FormLogin from './FormLogin/FormLogin'
-import Search from './Search/Search'
-import ContentInfo from './ContentInfo/ContentInfo'
-import Counter from './Counter/Counter'
+import TestUseMemo from './TestUseMemo/TestUseMemo'
+// import ToDoList from './ToDoList/ToDoList'
+// import Modal from './Modal/Modal'
+// import FormLogin from './FormLogin/FormLogin'
+// import Search from './Search/Search'
+// import ContentInfo from './ContentInfo/ContentInfo'
+// import Counter from './Counter/Counter'
 
 const App = () => {
 	const [isShowModal, setIsShowModal] = useState(false)
-	const [searchText, setSearchText] = useState('')
+	// const [searchText, setSearchText] = useState('')
 
 	const showModal = () => setIsShowModal(true)
 
-	const closeModal = () => setIsShowModal(false)
+	// const closeModal = () => setIsShowModal(false)
 
-	function createUser(data) {
-		const newUser = {
-			...data,
-			id: nanoid(),
-		}
-		console.log('newUser :>> ', newUser)
-	}
+	// function createUser(data) {
+	// 	const newUser = {
+	// 		...data,
+	// 		id: nanoid(),
+	// 	}
+	// 	console.log('newUser :>> ', newUser)
+	// }
 
-	const handleSearch = (searchText) => {
-		setSearchText(searchText)
-	}
+	// const handleSearch = (searchText) => {
+	// 	setSearchText(searchText)
+	// }
 
 	return (
 		<div className='container'>
@@ -39,7 +40,7 @@ const App = () => {
 				}}
 			/>
 			<Header showModal={showModal} />
-			<Search handleSearch={handleSearch} />
+			{/* <Search handleSearch={handleSearch} />
 			<ContentInfo searchText={searchText} />
 			<ToDoList />
 			{isShowModal && (
@@ -49,8 +50,9 @@ const App = () => {
 						createUser={createUser}
 					/>
 				</Modal>
-			)}
+			)} */}
 			{/* <Counter /> */}
+			<TestUseMemo />
 		</div>
 	)
 }
