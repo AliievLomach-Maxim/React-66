@@ -1,41 +1,17 @@
-import { useReducer, useState } from 'react'
+import { useDispatch, useSelector } from 'react-redux'
 
-// function reducer(prevState, action) {
-// 	if (action.type === 'increment') return prevState + action.payload
-// 	else return prevState - action.payload
-// }
-function reducer(prevState, action) {
-	if (action.type === 'createUser') {
-		return {
-			...prevState,
-			user: action.payload,
-		}
-	} else if (action.type === 'createCountry') {
-		return {
-			...prevState,
-			country: action.payload,
-		}
-	}
-}
+import { decrement, increment } from '../../store/counter/actions'
+
 const Counter = () => {
-	const [total, setTotal] = useState(0)
+	// const [total, setTotal] = useState(0)
 
-	// const [total, setTotal] = useReducer(reducer, 0)
-	// const [state, dispatch] = useReducer(reducer, {
-	// 	user: null,
-	// 	country: '',
-	// 	items: [],
-	// })
+	const { total, step } = useSelector((state) => state.counter)
 
-	// dispatch({ type: 'createUser', payload: { name: 'Alex' } })
-	// dispatch({ type: 'createCountry', payload: 'Ukraine' })
-	// const [user, setUser] = useState(null)
-	// const [country, setCountry] = useState('')
-	// const [items, setItems] = useState([])
+	const dispatch = useDispatch()
 
-	const handleClickPlus = () => setTotal({ type: 'increment', payload: 1 })
+	const handleClickPlus = () => dispatch(increment(step))
 
-	const handleClickMinus = () => setTotal({ type: 'decrement', payload: 1 })
+	const handleClickMinus = () => dispatch(decrement(step))
 
 	return (
 		<div className='position-absolute top-50 start-50 translate-middle'>
