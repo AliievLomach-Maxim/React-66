@@ -1,10 +1,18 @@
-import { createStore } from 'redux'
+import { configureStore } from '@reduxjs/toolkit'
+
+import { persistStore, persistReducer } from 'redux-persist'
+import storage from 'redux-persist/lib/storage' // defaults to localStorage for web
 
 import { reducer } from './reducer'
 
-export const store = createStore(reducer)
+const persistConfig = {
+	key: 'todoS',
+	storage,
+	blacklist: ['counter'],
+}
 
-// console.log('store :>> ', store)
+const persistedReducer = persistReducer(persistConfig, reducer)
 
-// store.dispatch({ type: 'increment', payload: 1 })
-// console.log(store.getState())
+export const store = configureStore({ reducer: persistedReducer })
+
+export const persistor = persistStore(store)

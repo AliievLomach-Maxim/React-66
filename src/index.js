@@ -5,14 +5,17 @@ import App from './components/App'
 import Context from './testContext/Context/Context'
 // import App from './testContext/App'
 
-import { store } from './store/store'
+import { persistor, store } from './store/store'
 import { Provider } from 'react-redux'
+import { PersistGate } from 'redux-persist/integration/react'
 
 ReactDOM.createRoot(document.getElementById('root')).render(
 	<BrowserRouter>
 		<Provider store={store}>
 			<Context>
-				<App />
+				<PersistGate loading={null} persistor={persistor}>
+					<App />
+				</PersistGate>
 			</Context>
 		</Provider>
 	</BrowserRouter>
