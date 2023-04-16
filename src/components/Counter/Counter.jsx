@@ -1,6 +1,6 @@
 import { useDispatch, useSelector } from 'react-redux'
 
-import { decrement, increment } from '../../store/counter/actions'
+import { increment, decrement } from '../../store/counter/counterSlice'
 
 const Counter = () => {
 	// const [total, setTotal] = useState(0)
