@@ -217,3 +217,18 @@
     -   create persist for one state
     -   persist back object
     -   whitelist
+
+## Module 7
+
+### Less 1
+
+-   how its work (Async Redux)
+-   create custom middleware
+-   create fetchNews
+-   create getNewsAction
+-   create newsReducer
+-   create newsSlice
+-   createAsyncThunk
+-   add extraReducers to newsSlice
+-   payloadCreator(arg, thunkAPI)
+-   edit ContentInfo with getNewsThunk
