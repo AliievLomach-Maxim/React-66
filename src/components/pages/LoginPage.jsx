@@ -1,16 +1,17 @@
 import { useEffect } from 'react'
-import { loginThunk } from '../../store/auth/thunk'
+import { getProfileThunk, loginThunk } from '../../store/auth/thunk'
 import { useDispatch, useSelector } from 'react-redux'
-import { useNavigate } from 'react-router-dom'
+import { Link, useNavigate } from 'react-router-dom'
+import { toast } from 'react-hot-toast'
 
 const LoginPage = () => {
-	const isAuth = useSelector((state) => state.auth.access_token)
+	// const isAuth = useSelector((state) => state.auth.access_token)
 	const dispatch = useDispatch()
-	const navigate = useNavigate()
+	// const navigate = useNavigate()
 
-	useEffect(() => {
-		isAuth && navigate('/')
-	}, [isAuth, navigate])
+	// useEffect(() => {
+	// 	isAuth && navigate('/')
+	// }, [isAuth, navigate])
 
 	const handleSubmit = (e) => {
 		e.preventDefault()
@@ -20,6 +21,12 @@ const LoginPage = () => {
 				password: e.target.elements.password.value,
 			})
 		)
+			.unwrap()
+			// .then(() => {
+			// 	dispatch(getProfileThunk())
+			// 	// navigate('/')
+			// })
+			.catch(() => toast.error('Some error...'))
 	}
 	return (
 		<div
@@ -57,6 +64,9 @@ const LoginPage = () => {
 						className='form-control'
 						id='exampleInputPassword1'
 					/>
+				</div>
+				<div>
+					<Link to='/signUp'>Sign Up</Link>
 				</div>
 				<button type='submit' className='btn btn-primary'>
 					Submit
