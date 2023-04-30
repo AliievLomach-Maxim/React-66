@@ -232,3 +232,50 @@
 -   add extraReducers to newsSlice
 -   payloadCreator(arg, thunkAPI)
 -   edit ContentInfo with getNewsThunk
+
+# Module 7 > Less 2
+
+-   useSelector problem
+-   create selector folder
+-   test with local state
+-   createSelector (memo)
+-   shallowEqual
+
+-   builder
+
+    -   addCase
+    -   addMatcher
+    -   isAnyOf
+
+-   RTK Query
+    -   createApi
+    -   query
+    -   use...Query
+    -   middleware
+    -   mutation
+    -   use...Mutation
+    -   providerTags
+    -   invalidatesTags
+
+# Module 8 > Less 1
+
+-   create signIn
+-   JSON Web Token
+-   authLogin
+-   create auth state/slice/thunk
+-   header logic
+-   global instance axios
+-   setAuthToken
+-   get profile
+
+# Module 8 > Less 2
+
+-   unwrap()
+-   thunkApi
+-   publicRoute
+-   location
+-   auto login
+-   private & public Api
+
+-   Framer Motion
+-   react-spring
